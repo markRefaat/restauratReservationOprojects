@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('checkAvailability', [App\Http\Controllers\ManageReservationController::class, 'checkAvailability']);
+Route::post('reserveTable', [App\Http\Controllers\ManageReservationController::class, 'reserveTable']);
+Route::get('menu', [App\Http\Controllers\MenuController::class, 'menu']);
+Route::post('placeOrder', [App\Http\Controllers\OrderController::class, 'placeOrder']);
+Route::post('checkout', [App\Http\Controllers\CheckoutController::class, 'checkout']);
